@@ -3,6 +3,7 @@
 	import api from '../api';
 	import { products, Savedproducts } from '../stores/store';
 	import DeleteProduct from './DeleteProduct.svelte';
+	import WaitingSpinner from './WaitingSpinner.svelte';
 
 	onMount(async () => {
 		if ($products.length == 0) {
@@ -17,10 +18,12 @@
 	});
 </script>
 
-<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 p-4">
-	{#if $products.length == 0}
-		waiting..
+
+{#if $products.length == 0}
+<WaitingSpinner/>
 	{/if}
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 p-4">
+	
 
 	{#each $products as product (product.id)}
 		<div class="bg-white shadow-md p-4 rounded-lg">
