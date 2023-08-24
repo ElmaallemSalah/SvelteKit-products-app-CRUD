@@ -7,7 +7,7 @@ Everything you need to build a Svelte project, powered by [`create-svelte`](http
 
 
 ```bash
-# create a new project in the current directory
+#  installing dependencies
 npm install 
 
 
