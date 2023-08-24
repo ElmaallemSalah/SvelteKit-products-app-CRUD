@@ -1,6 +1,7 @@
 <script>
 	import { products } from '../stores/store';
 	import api from '../api';
+	import Icon from '@iconify/svelte';
 
 	/**
 	 * @type {any}
@@ -19,4 +20,7 @@
 	}
 </script>
 
-<button class="bg-red-500 text-white py-2 px-4 rounded" on:click={deleteProduct}>Delete</button>
+<button  on:click={deleteProduct}>
+	<Icon icon="material-symbols:delete" color="red"   width="30" height="30"  />
+</button>
+
